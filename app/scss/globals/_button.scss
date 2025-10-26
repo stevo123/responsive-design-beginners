@@ -19,6 +19,15 @@
     &:hover {
       background-color: var(--button-primary-bg-hover);
     }
+
+    &.white {
+      background-color: var(--button-primary-white-bg);
+      color: var(--button-primary-text);
+
+      &:hover {
+        background-color: var(--button-primary-white-bg-hover);
+      }
+    }
   }
 
   &.secondary {

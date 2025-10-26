@@ -100,6 +100,8 @@ a:active {
   --hero-bg: hsl(232, 58%, 55%);
   --button-primary-bg: hsl(180, 100%, 42%);
   --button-primary-bg-hover: hsl(180, 100%, 37%);
+  --button-primary-white-bg: hsl(0, 0%, 100%);
+  --button-primary-white-bg-hover: hsl(0, 0%, 90%);
   --button-primary-border: hsl(180, 100%, 42%);
   --button-primary-text: hsl(233, 14%, 25%);
   --button-secondary-bg: transparent;
@@ -108,6 +110,9 @@ a:active {
   --button-secondary-text: hsl(0, 0%, 100%);
   --button-secondary-text-hover: var(--hero-bg);
   --fullwidth-bg: hsl(320, 85%, 41%);
+  --gradient1: hsl(250, 14%, 25%);
+  --gradient2: hsl(232, 58%, 55%);
+  --gradient3: hsl(180, 100%, 42%);
 }
 
 .magenta {
@@ -137,6 +142,13 @@ a:active {
 .button.primary:hover {
   background-color: var(--button-primary-bg-hover);
 }
+.button.primary.white {
+  background-color: var(--button-primary-white-bg);
+  color: var(--button-primary-text);
+}
+.button.primary.white:hover {
+  background-color: var(--button-primary-white-bg-hover);
+}
 .button.secondary {
   box-shadow: inset 0 0 0 2px var(--button-secondary-border);
   background-color: var(--button-secondary-bg);
@@ -145,6 +157,16 @@ a:active {
 .button.secondary:hover {
   background-color: var(--button-secondary-bg-hover);
   color: var(--button-secondary-text-hover);
+}
+
+.fullwidth {
+  color: var(--text-light);
+  text-align: center;
+}
+.fullwidth__description {
+  max-width: 70ch;
+  margin-inline: auto;
+  margin-block-end: 2.5rem;
 }
 
 .wrapper {
@@ -291,13 +313,6 @@ a:active {
 
 .fw-feature {
   background-color: var(--fullwidth-bg);
-  color: var(--text-light);
-  text-align: center;
-}
-.fw-feature__description {
-  max-width: 70ch;
-  margin-inline: auto;
-  margin-block-end: 2.5rem;
 }
 @media (min-width: 56.25em) {
   .fw-feature__image {
@@ -339,5 +354,14 @@ a:active {
 @media (max-width: 28.24875em) {
   .testimonial__author-description {
     text-align: center;
+  }
+}
+
+.fw-cta {
+  background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 76.28%, var(--gradient3) 152.28%);
+}
+@media (min-width: 56.25em) {
+  .fw-cta {
+    background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 56.34%, var(--gradient3) 112.47%);
   }
 }/*# sourceMappingURL=style.css.map */
