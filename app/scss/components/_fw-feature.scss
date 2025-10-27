@@ -3,12 +3,6 @@
 .fw-feature {
   background-color: var(--fullwidth-bg);
 
-  &__wrapper {
-  }
-  &__title {
-  }
-  &__description {
-  }
   &__image {
     @include u.breakpoint(large) {
       max-width: u.rem(792);
