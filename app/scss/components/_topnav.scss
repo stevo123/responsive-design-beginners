@@ -34,16 +34,28 @@
   }
 
   &__link {
+    display: block;
     font-size: u.rem(14);
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--text-light);
     text-transform: uppercase;
 
-    &:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
+    &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--link-gradient1) 0%,
+        var(--link-gradient2) 82.38%
+      );
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
 
     @include u.breakpoint(large) {
