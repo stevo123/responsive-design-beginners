@@ -1,41 +1,45 @@
 @use '../util/' as u;
 
 .hero {
+  --wave-height: clamp(
+    1.3125rem,
+    -0.39204545454545436rem + 7.2727272727272725vw,
+    5.0625rem
+  );
+
   background-color: var(--hero-bg);
   color: var(--text-light);
+  padding-block-start: 40px;
 
-  &__wrapper {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
+  &__wave {
+    height: var(--wave-height);
+  }
+
+  &__content {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 40px;
-    justify-items: center;
-    padding-block: 30px 60px;
+    margin-block-end: calc(60px + var(--wave-height));
 
     @include u.breakpoint(large) {
-      // flex-direction: row-reverse;
       grid-template-columns: 6fr 5fr;
-      gap: 10%;
-      align-items: center;
-      padding-block: 40px 80px;
+      margin-block-end: 0;
     }
   }
 
   &__image {
     width: 61%;
     max-width: u.rem(483);
+    justify-self: center;
 
     @include u.breakpoint(large) {
-      // flex: 5;
-      order: 1;
       width: 100%;
+      padding-block-start: 30px;
+      order: 1;
+      justify-self: end;
     }
   }
 
   &__text {
-    // flex: 6;
   }
 
   &__button {
