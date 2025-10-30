@@ -4,11 +4,34 @@
   &__wrapper {
     max-width: u.rem(795);
   }
+
+  figure {
+    position: relative;
+  }
+
   &__icon {
     width: 16%;
     max-width: u.rem(78);
-    margin-block-end: 1.25rem;
     margin-block-end: clamp(u.rem(20), 0.68rem + 2.42vw, u.rem(40));
+
+    @include u.breakpoint(xlarge) {
+      position: absolute;
+
+      &:first-child {
+        translate: calc(-100% - 40px) -30px;
+      }
+      &:nth-child(3) {
+        rotate: 180deg;
+        right: 0;
+        translate: calc(+100% + 40px) calc(-100% - 10px);
+      }
+    }
+
+    @include u.breakpoint-down(large) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
   &__quote {
     font-size: 1.5rem;
