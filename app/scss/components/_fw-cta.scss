@@ -16,4 +16,43 @@
       var(--gradient3) 112.47%
     );
   }
+  &__form {
+    display: grid;
+    grid-template-areas:
+      'label'
+      'text'
+      'button';
+    max-width: u.rem(350);
+    margin-inline: auto;
+
+    @include u.breakpoint(medium) {
+      grid-template-areas:
+        'label label'
+        'text button';
+      justify-content: center;
+    }
+  }
+  &__label {
+    grid-area: label;
+    justify-self: start;
+    margin-block-end: 12px;
+  }
+  &__text {
+    grid-area: text;
+    max-width: u.rem(350);
+
+    @include u.breakpoint-down(small) {
+      margin-block-end: 20px;
+    }
+
+    @include u.breakpoint(medium) {
+      margin-inline-end: 20px;
+      width: u.rem(300);
+    }
+  }
+  &__button {
+    grid-area: button;
+    justify-self: center;
+    border: none;
+  }
 }
