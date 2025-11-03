@@ -16,7 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/dist/style.css" />
-    <script src="/app/js/script.js"></script>
+    <script defer src="/app/js/bodyScrollLock.min.js"></script>
+    <script defer src="/app/js/script.js"></script>
   </head>
   <body>
     <a href="#main" class="visually-hidden">Skip to main content</a>
@@ -31,8 +32,31 @@
             width="128"
             height="36"
           />
-          <nav>
+        </a>
+        <nav>
+          <span id="nav-label" hidden>Navigation</span>
+          <div id="overlay" class="topnav__overlay"></div>
+          <button
+            id="btnOpen"
+            class="topnav__open"
+            aria-expanded="false"
+            aria-labelledby="nav-label"
+          >
+            <img src="/img/hamburger.svg" alt="" width="30" height="23" />
+          </button>
+          <div
+            id="menuTopNav"
+            class="topnav__menu"
+            role="dialog"
+            aria-labelledby="nav-label"
+          >
+            <button id="btnClose" class="topnav__close">
+              <img src="/img/close-button.svg" alt="" width="25" height="26" />
+            </button>
             <ul class="topnav__links">
+              <li class="topnav__item">
+                <a href="" class="topnav__link">Home</a>
+              </li>
               <li class="topnav__item">
                 <a href="" class="topnav__link">Features</a>
               </li>
@@ -43,8 +67,8 @@
                 <a href="" class="topnav__link">About</a>
               </li>
             </ul>
-          </nav>
-        </a>
+          </div>
+        </nav>
       </div>
     </header>
     <main id="main">
@@ -274,7 +298,7 @@
         </section>
       </article>
     </main>
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <h2 class="visually-hidden">Footer</h2>
       <div class="footer__wrapper wrapper">
         <section class="footer__logo">
