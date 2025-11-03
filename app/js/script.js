@@ -12,6 +12,7 @@ const setUpTopNav = () => {
     menuTopNav.setAttribute('inert', '');
   } else {
     // console.log('is tablet/desktop');
+    closeMobileMenu();
     menuTopNav.removeAttribute('inert');
   }
 };
